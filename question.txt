@@ -1,0 +1,20 @@
+用户名：银翼
+密码：Aa123456
+MEETING的密码:  c87654312
+
+正在生成hfile  ，自然人生成了   电商归属任务提交 等待执行
+
+
+conf.set("fs.defaultFS",PropertiesUtil.getProperties("fs.defaultFS"));
+        conf.set("yarn.resourcemanager.hostname",
+            PropertiesUtil.getProperties("yarn.resourcemanager.hostname"));
+        //下面这几个参数导致OOM，故暂且注掉或者修改，日后优化
+        //conf.set("mapreduce.tasktracker.map.tasks.maximum", "2");
+		//conf.set("mapreduce.map.memory.mb", "2048");
+//		conf.set("mapred.map.child.java.opts", "-Xmx1536m");
+//        conf.set("mapreduce.reduce.memory.mb", "8192");
+        conf.set("mapreduce.reduce.memory.mb", "4096");
+		conf.set("mapred.reduce.child.java.opts", "-Xmx3072m");
+        conf.set("hbase.zookeeper.quorum",
+            PropertiesUtil.getProperties("hbase.zookeeper.quorum"));
+          
